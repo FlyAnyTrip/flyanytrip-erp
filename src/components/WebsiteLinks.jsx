@@ -15,6 +15,14 @@ const WebsiteLinks = ({ links }) => {
       Sales: "category-sales",
       Reports: "category-reports",
       Marketing: "category-marketing",
+      Leads: "category-leads",
+      Travellers: "category-travellers",
+      Tech: "category-tech",
+      Partnerships: "category-partnerships",
+      Operations: "category-operations",
+      "Customer Portal": "category-customer-portal",
+      Packages: "category-packages",
+      "Agent Tools": "category-agent-tools",
     }
     return colors[category] || "category-default"
   }
