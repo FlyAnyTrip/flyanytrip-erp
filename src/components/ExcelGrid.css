@@ -181,24 +181,36 @@
   color: #be185d;
 }
 .category-leads {
-  background: #fef3c7;
-  color: #d97706;
+  background: #fed7aa;
+  color: #ea580c;
 }
 .category-travellers {
-  background: #e0f2fe;
-  color: #0369a1;
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 .category-tech {
-  background: #f3e8ff;
-  color: #7c3aed;
+  background: #e9d5ff;
+  color: #7c2d12;
 }
 .category-partnerships {
-  background: #ecfdf5;
-  color: #059669;
+  background: #d1fae5;
+  color: #065f46;
 }
 .category-operations {
-  background: #fef2f2;
-  color: #dc2626;
+  background: #fecaca;
+  color: #b91c1c;
+}
+.category-customer-portal {
+  background: #fef3c7;
+  color: #a16207;
+}
+.category-packages {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+.category-agent-tools {
+  background: #f3e8ff;
+  color: #581c87;
 }
 .category-default {
   background: #f1f5f9;
