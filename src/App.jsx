@@ -22,7 +22,19 @@ function App() {
   const [excelSheets, setExcelSheets] = useState([])
   const [websiteLinks, setWebsiteLinks] = useState([])
   const [tasks, setTasks] = useState([])
-  const [categories, setCategories] = useState(["Finance", "HR", "Inventory", "Sales", "Reports", "Marketing"])
+  const [categories, setCategories] = useState([
+    "Finance",
+    "HR",
+    "Inventory",
+    "Sales",
+    "Reports",
+    "Marketing",
+    "Leads",
+    "Travellers",
+    "Tech",
+    "Partnerships",
+    "Operations",
+  ])
   const [searchTerm, setSearchTerm] = useState("")
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
