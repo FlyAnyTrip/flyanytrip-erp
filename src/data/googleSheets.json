@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Monthly Sales Dashboard",
+    "description": "Complete sales tracking with targets, achievements, and performance metrics for all regions",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Sales",
+    "isPinned": true
+  },
+  {
+    "id": "2",
+    "name": "Employee Master Database",
+    "description": "Comprehensive employee records including personal details, salary, performance reviews, and attendance",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "HR",
+    "isPinned": false
+  },
+  {
+    "id": "3",
+    "name": "Annual Budget Planning 2025",
+    "description": "Detailed budget allocation, expense tracking, and financial forecasting for all departments",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Finance",
+    "isPinned": true
+  },
+  {
+    "id": "4",
+    "name": "Inventory Management System",
+    "description": "Real-time stock levels, purchase orders, supplier details, and inventory movement tracking",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Inventory",
+    "isPinned": false
+  },
+  {
+    "id": "5",
+    "name": "Marketing Campaign Analytics",
+    "description": "Campaign performance metrics, ROI analysis, lead generation tracking, and social media analytics",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Marketing",
+    "isPinned": true
+  },
+  {
+    "id": "6",
+    "name": "Q1 2025 Performance Reports",
+    "description": "Comprehensive quarterly business reports including KPIs, financial summaries, and departmental analysis",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Reports",
+    "isPinned": false
+  },
+  {
+    "id": "7",
+    "name": "Payroll Management Sheet",
+    "description": "Monthly payroll calculations, tax deductions, bonus tracking, and salary disbursement records",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "HR",
+    "isPinned": false
+  },
+  {
+    "id": "8",
+    "name": "Customer Relationship Management",
+    "description": "Complete customer database with contact details, purchase history, feedback, and support tickets",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Sales",
+    "isPinned": true
+  },
+  {
+    "id": "9",
+    "name": "Monthly Expense Tracker",
+    "description": "Detailed expense tracking for all departments including receipts, approvals, and reimbursements",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Finance",
+    "isPinned": false
+  },
+  {
+    "id": "10",
+    "name": "Project Management Timeline",
+    "description": "Project milestones, task assignments, deadlines, and progress tracking for all ongoing projects",
+    "url": "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "category": "Reports",
+    "isPinned": false
+  }
+]
