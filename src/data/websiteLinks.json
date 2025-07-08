@@ -1,98 +1,42 @@
 [
   {
-    "id": "201",
-    "name": "TripEasy - Travel Booking Platform",
-    "description": "Complete travel booking solution with flight, hotel, and package bookings for corporate travel management",
+    "id": "301",
+    "name": "FlyAnyTrip Booking Portal",
+    "description": "Used by customers to book flight tickets online via FlyAnyTrip",
+    "url": "https://flyanytrip.com/index2.html",
+    "category": "Customer Portal",
+    "isPinned": true
+  },
+  {
+    "id": "302",
+    "name": "Tripeasy Package Platform",
+    "description": "Tripeasy is used for browsing and booking travel packages",
     "url": "https://tripeasy.in/",
-    "category": "Finance",
+    "category": "Packages",
     "isPinned": true
   },
   {
-    "id": "202",
-    "name": "Google Analytics Dashboard",
-    "description": "Website traffic analysis, user behavior tracking, conversion metrics, and marketing campaign performance",
-    "url": "https://analytics.google.com/",
-    "category": "Marketing",
-    "isPinned": false
-  },
-  {
-    "id": "203",
-    "name": "LinkedIn Talent Solutions",
-    "description": "Professional networking platform for recruitment, talent acquisition, and employee branding initiatives",
-    "url": "https://www.linkedin.com/talent/",
-    "category": "HR",
-    "isPinned": true
-  },
-  {
-    "id": "204",
-    "name": "Microsoft Power BI Reports",
-    "description": "Business intelligence dashboard with interactive reports, data visualization, and real-time analytics",
-    "url": "https://powerbi.microsoft.com/",
-    "category": "Reports",
-    "isPinned": false
-  },
-  {
-    "id": "205",
-    "name": "Salesforce CRM Platform",
-    "description": "Customer relationship management system for sales pipeline, lead tracking, and customer service management",
-    "url": "https://www.salesforce.com/",
-    "category": "Sales",
-    "isPinned": true
-  },
-  {
-    "id": "206",
-    "name": "QuickBooks Online Accounting",
-    "description": "Cloud-based accounting software for invoicing, expense tracking, tax preparation, and financial reporting",
-    "url": "https://quickbooks.intuit.com/",
+    "id": "303",
+    "name": "FlyAnyTrip Ledger System",
+    "description": "Internal ledger system for tracking financials and transactions",
+    "url": "https://flyanytrip.com/s/",
     "category": "Finance",
     "isPinned": false
   },
   {
-    "id": "207",
-    "name": "Slack Team Communication",
-    "description": "Team collaboration platform for messaging, file sharing, and project coordination",
-    "url": "https://slack.com/",
-    "category": "HR",
-    "isPinned": false
-  },
-  {
-    "id": "208",
-    "name": "Zoom Video Conferencing",
-    "description": "Video conferencing solution for meetings, webinars, and remote collaboration",
-    "url": "https://zoom.us/",
-    "category": "HR",
+    "id": "304",
+    "name": "FlyAnyTrip Agent Portal",
+    "description": "POS/ERP dashboard for FlyAnyTrip agents to manage bookings and customers",
+    "url": "https://flyanytrip.com/agent/POS-ERP.php",
+    "category": "Agent Tools",
     "isPinned": true
   },
   {
-    "id": "209",
-    "name": "Mailchimp Email Marketing",
-    "description": "Email marketing platform for campaigns, automation, and customer engagement",
-    "url": "https://mailchimp.com/",
-    "category": "Marketing",
-    "isPinned": false
-  },
-  {
-    "id": "210",
-    "name": "Trello Project Management",
-    "description": "Visual project management tool with boards, lists, and cards for team organization",
-    "url": "https://trello.com/",
-    "category": "Reports",
-    "isPinned": false
-  },
-  {
-    "id": "211",
-    "name": "GitHub Code Repository",
-    "description": "Version control and collaboration platform for software development projects",
-    "url": "https://github.com/",
-    "category": "Reports",
+    "id": "305",
+    "name": "Statue of Unity Tour Site",
+    "description": "Website showcasing and booking Statue of Unity travel packages",
+    "url": "https://statueofunitytour.in/",
+    "category": "Packages",
     "isPinned": true
-  },
-  {
-    "id": "212",
-    "name": "Canva Design Platform",
-    "description": "Graphic design tool for creating marketing materials, presentations, and social media content",
-    "url": "https://canva.com/",
-    "category": "Marketing",
-    "isPinned": false
   }
 ]
