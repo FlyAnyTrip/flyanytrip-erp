@@ -1,107 +1,72 @@
 [
   {
-    "id": "101",
-    "name": "Complete Q1 Sales Performance Review",
-    "description": "Analyze Q1 sales data, prepare comprehensive performance report, identify trends, and present findings to management team with actionable recommendations",
-    "category": "Sales",
+    "id": "201",
+    "name": "Integrate Real-Time Flight API",
+    "description": "Connect and configure real-time flight data API to fetch schedules, pricing, and availability for customer bookings",
+    "category": "Tech",
     "isPinned": true
   },
   {
-    "id": "102",
-    "name": "Update Employee Handbook 2025",
-    "description": "Review and update company policies, add new remote work guidelines, update benefits information, and ensure compliance with latest labor laws",
-    "category": "HR",
-    "isPinned": false
-  },
-  {
-    "id": "103",
-    "name": "Prepare Monthly Budget Variance Report",
-    "description": "Compile monthly expenses, analyze budget variance, identify cost-saving opportunities, and prepare detailed financial report for stakeholders",
-    "category": "Finance",
-    "isPinned": true
-  },
-  {
-    "id": "104",
-    "name": "Conduct Warehouse A Stock Audit",
-    "description": "Perform comprehensive physical stock verification, update inventory records, identify discrepancies, and implement corrective measures",
-    "category": "Inventory",
-    "isPinned": false
-  },
-  {
-    "id": "105",
-    "name": "Launch Q1 Social Media Marketing Campaign",
-    "description": "Create engaging content calendar, design promotional materials, schedule posts across platforms, and monitor campaign performance metrics",
-    "category": "Marketing",
-    "isPinned": false
-  },
-  {
-    "id": "106",
-    "name": "Conduct Annual Performance Reviews",
-    "description": "Schedule and conduct performance evaluations for all team members, provide constructive feedback, set goals for 2025, and process salary adjustments",
-    "category": "HR",
-    "isPinned": true
-  },
-  {
-    "id": "107",
-    "name": "Prepare Client Proposal Presentation",
-    "description": "Create comprehensive proposal presentation for new client, include service offerings, pricing structure, timeline, and competitive advantages",
-    "category": "Sales",
-    "isPinned": false
-  },
-  {
-    "id": "108",
-    "name": "Implement Automated Backup System",
-    "description": "Set up automated daily backups for all critical systems, test recovery procedures, document backup protocols, and train IT team",
-    "category": "Reports",
-    "isPinned": false
-  },
-  {
-    "id": "109",
-    "name": "Evaluate New Supplier Partnerships",
-    "description": "Research potential suppliers, compare pricing and quality, conduct vendor meetings, negotiate terms, and recommend best options",
-    "category": "Inventory",
-    "isPinned": false
-  },
-  {
-    "id": "110",
-    "name": "Prepare Annual Tax Documentation",
-    "description": "Gather all financial records, organize tax documents, coordinate with accountant, ensure compliance with tax regulations, and file returns",
-    "category": "Finance",
-    "isPinned": false
-  },
-  {
-    "id": "111",
-    "name": "Company Website Redesign Project",
-    "description": "Plan website restructure, create new design mockups, update content, improve SEO, and ensure mobile responsiveness",
+    "id": "202",
+    "name": "Launch Monsoon Travel Campaign",
+    "description": "Design creatives, finalize destinations, and run social media ads for special monsoon tour packages",
     "category": "Marketing",
     "isPinned": true
   },
   {
-    "id": "112",
-    "name": "Develop Employee Training Program",
-    "description": "Design comprehensive training modules, create learning materials, schedule training sessions, and track employee progress and certification",
+    "id": "203",
+    "name": "Create Hotel Partner Onboarding Form",
+    "description": "Build a form and backend logic to onboard new hotel partners with property details and pricing",
+    "category": "Partnerships",
+    "isPinned": false
+  },
+  {
+    "id": "204",
+    "name": "Audit All Tour Inquiry Sheets",
+    "description": "Go through Unity, Daman, and FlyAnyTrip enquiry sheets to identify high-conversion leads and assign agents",
+    "category": "Operations",
+    "isPinned": true
+  },
+  {
+    "id": "205",
+    "name": "Build Subscription Validation System",
+    "description": "Implement backend logic to block agents with expired subscriptions and allow renewal via dashboard",
+    "category": "Tech",
+    "isPinned": false
+  },
+  {
+    "id": "206",
+    "name": "Design International Tour Brochure",
+    "description": "Collaborate with design team to create downloadable brochures for Bali, Dubai, and Europe packages",
+    "category": "Marketing",
+    "isPinned": false
+  },
+  {
+    "id": "207",
+    "name": "Setup Lead Auto-Routing Logic",
+    "description": "Implement system to auto-assign inquiries to regional agents based on location and availability",
+    "category": "Tech",
+    "isPinned": true
+  },
+  {
+    "id": "208",
+    "name": "Add Razorpay to Booking Flow",
+    "description": "Integrate Razorpay checkout and webhooks to confirm bookings and update payment status",
+    "category": "Tech",
+    "isPinned": false
+  },
+  {
+    "id": "209",
+    "name": "Host Agent Training Session",
+    "description": "Schedule a Zoom session for all agents to understand new CRM features and inquiry management process",
     "category": "HR",
     "isPinned": false
   },
   {
-    "id": "113",
-    "name": "Generate Q4 2024 Business Analysis",
-    "description": "Compile quarterly performance data, analyze key metrics, identify growth opportunities, and prepare executive summary report",
-    "category": "Reports",
+    "id": "210",
+    "name": "Optimize Google Business Profile",
+    "description": "Update business hours, add latest reviews, and upload recent images for better local SEO rankings",
+    "category": "Marketing",
     "isPinned": false
-  },
-  {
-    "id": "114",
-    "name": "Conduct Customer Satisfaction Survey",
-    "description": "Design survey questionnaire, distribute to customer base, collect and analyze feedback, and implement improvement recommendations",
-    "category": "Sales",
-    "isPinned": false
-  },
-  {
-    "id": "115",
-    "name": "Complete Regulatory Compliance Audit",
-    "description": "Review all business processes for regulatory compliance, identify gaps, implement corrective measures, and prepare audit documentation",
-    "category": "Reports",
-    "isPinned": true
   }
 ]
