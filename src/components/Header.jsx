@@ -120,7 +120,7 @@ const Header = ({
                           setShowFilters(false)
                         }}
                       >
-                        <span className={`filter-dot ${category.toLowerCase()}`}></span>
+                        <span className={`filter-dot ${category.toLowerCase().replace(/\s+/g, "")}`}></span>
                         {category}
                       </button>
                     ))}
