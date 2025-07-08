@@ -180,6 +180,26 @@
   background: #fce7f3;
   color: #be185d;
 }
+.category-leads {
+  background: #fef3c7;
+  color: #d97706;
+}
+.category-travellers {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.category-tech {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+.category-partnerships {
+  background: #ecfdf5;
+  color: #059669;
+}
+.category-operations {
+  background: #fef2f2;
+  color: #dc2626;
+}
 .category-default {
   background: #f1f5f9;
   color: #475569;
