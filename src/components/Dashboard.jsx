@@ -315,7 +315,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
                 <line x1="16" y1="13" x2="8" y2="13" />
                 <line x1="16" y1="17" x2="8" y2="17" />
               </svg>
-              Recent Google Sheets
+              Google Sheets
             </h2>
             <button className="section-action" onClick={() => onNavigate("/sheets")}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -388,7 +388,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
                 <path d="M9 11l3 3L22 4" />
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
               </svg>
-              Recent Tasks
+              Tasks
             </h2>
             <button className="section-action" onClick={() => onNavigate("/tasks")}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -440,7 +440,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
                 <line x1="2" y1="12" x2="22" y2="12" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
-              Recent Website Links
+              Website Links
             </h2>
             <button className="section-action" onClick={() => onNavigate("/websites")}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
