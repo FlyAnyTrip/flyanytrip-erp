@@ -588,23 +588,35 @@
 }
 
 .filter-dot.leads {
-  background: #d97706;
+  background: #ea580c;
 }
 
 .filter-dot.travellers {
-  background: #0369a1;
+  background: #1d4ed8;
 }
 
 .filter-dot.tech {
-  background: #7c3aed;
+  background: #7c2d12;
 }
 
 .filter-dot.partnerships {
-  background: #059669;
+  background: #065f46;
 }
 
 .filter-dot.operations {
-  background: #dc2626;
+  background: #b91c1c;
+}
+
+.filter-dot.customer-portal {
+  background: #a16207;
+}
+
+.filter-dot.packages {
+  background: #3730a3;
+}
+
+.filter-dot.agent-tools {
+  background: #581c87;
 }
 
 .add-button {
