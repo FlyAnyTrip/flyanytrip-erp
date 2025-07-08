@@ -34,6 +34,9 @@ function App() {
     "Tech",
     "Partnerships",
     "Operations",
+    "Customer Portal",
+    "Packages",
+    "Agent Tools",
   ])
   const [searchTerm, setSearchTerm] = useState("")
   const [loading, setLoading] = useState(true)
