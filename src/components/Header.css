@@ -587,6 +587,26 @@
   background: #f97316;
 }
 
+.filter-dot.leads {
+  background: #d97706;
+}
+
+.filter-dot.travellers {
+  background: #0369a1;
+}
+
+.filter-dot.tech {
+  background: #7c3aed;
+}
+
+.filter-dot.partnerships {
+  background: #059669;
+}
+
+.filter-dot.operations {
+  background: #dc2626;
+}
+
 .add-button {
   display: flex;
   align-items: center;
