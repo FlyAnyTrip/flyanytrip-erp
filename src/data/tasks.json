@@ -4,7 +4,7 @@
     "name": "Integrate Real-Time Flight API",
     "description": "Connect and configure real-time flight data API to fetch schedules, pricing, and availability for customer bookings",
     "category": "Tech",
-    "isPinned": true
+    "isPinned": false
   },
   {
     "id": "202",
@@ -18,7 +18,7 @@
     "name": "Create Hotel Partner Onboarding Form",
     "description": "Build a form and backend logic to onboard new hotel partners with property details and pricing",
     "category": "Partnerships",
-    "isPinned": false
+    "isPinned": true
   },
   {
     "id": "204",
@@ -39,14 +39,14 @@
     "name": "Design International Tour Brochure",
     "description": "Collaborate with design team to create downloadable brochures for Bali, Dubai, and Europe packages",
     "category": "Marketing",
-    "isPinned": false
+    "isPinned": true
   },
   {
     "id": "207",
     "name": "Setup Lead Auto-Routing Logic",
     "description": "Implement system to auto-assign inquiries to regional agents based on location and availability",
     "category": "Tech",
-    "isPinned": true
+    "isPinned": false
   },
   {
     "id": "208",
