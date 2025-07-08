@@ -2,19 +2,27 @@
 
 import "./TaskGrid.css"
 
-const TaskGrid = ({ tasks }) => {
-  const getCategoryColor = (category) => {
-    const colors = {
-      Finance: "category-finance",
-      HR: "category-hr",
-      Inventory: "category-inventory",
-      Sales: "category-sales",
-      Reports: "category-reports",
-      Marketing: "category-marketing",
-    }
-    return colors[category] || "category-default"
+const getCategoryColor = (category) => {
+  const colors = {
+    Finance: "category-finance",
+    HR: "category-hr",
+    Inventory: "category-inventory",
+    Sales: "category-sales",
+    Reports: "category-reports",
+    Marketing: "category-marketing",
+    Leads: "category-leads",
+    Travellers: "category-travellers",
+    Tech: "category-tech",
+    Partnerships: "category-partnerships",
+    Operations: "category-operations",
+    "Customer Portal": "category-customer-portal",
+    Packages: "category-packages",
+    "Agent Tools": "category-agent-tools",
   }
+  return colors[category] || "category-default"
+}
 
+const TaskGrid = ({ tasks }) => {
   if (tasks.length === 0) {
     return (
       <div className="empty-state">
