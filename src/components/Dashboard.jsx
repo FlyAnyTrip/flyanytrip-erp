@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react"
 import "./Dashboard.css"
 
-const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
+const Dashboard = ({ excelSheets, websiteLinks, tasks, cps, onNavigate }) => {
   const [stats, setStats] = useState({
     totalSheets: 0,
     totalLinks: 0,
     totalTasks: 0,
+    totalCPS: 0,
     categories: {},
   })
 
@@ -15,7 +16,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
 
   useEffect(() => {
     const categoryCount = {}
-    const allItems = [...excelSheets, ...websiteLinks, ...tasks]
+    const allItems = [...excelSheets, ...websiteLinks, ...tasks, ...cps]
 
     allItems.forEach((item) => {
       categoryCount[item.category] = (categoryCount[item.category] || 0) + 1
@@ -25,14 +26,16 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
       totalSheets: excelSheets.length,
       totalLinks: websiteLinks.length,
       totalTasks: tasks.length,
+      totalCPS: cps.length,
       categories: categoryCount,
     })
-  }, [excelSheets, websiteLinks, tasks])
+  }, [excelSheets, websiteLinks, tasks, cps])
 
   // Get pinned items from all categories
   const pinnedSheets = excelSheets.filter((sheet) => sheet.isPinned)
   const pinnedTasks = tasks.filter((task) => task.isPinned)
   const pinnedLinks = websiteLinks.filter((link) => link.isPinned)
+  const pinnedCPS = cps.filter((item) => item.isPinned)
 
   // Filter pinned items based on selected filter
   const getFilteredPinnedItems = () => {
@@ -41,11 +44,13 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
         return pinnedSheets
       case "websites":
         return pinnedLinks
+      case "cps":
+        return pinnedCPS
       case "tasks":
         return pinnedTasks
       default:
-        // Return in priority order: sheets, websites, tasks
-        return [...pinnedSheets, ...pinnedLinks, ...pinnedTasks]
+        // Return in priority order: sheets, websites, tasks, cps
+        return [...pinnedSheets, ...pinnedLinks, ...pinnedCPS, ...pinnedTasks]
     }
   }
 
@@ -80,6 +85,8 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
     if (excelSheets.some((sheet) => sheet.id === item.id)) return "sheet"
     // Check if item exists in links array
     if (websiteLinks.some((link) => link.id === item.id)) return "link"
+    // Check if item exists in cps array
+    if (cps.some((cpsItem) => cpsItem.id === item.id)) return "cps"
     // Otherwise it's a task
     return "task"
   }
@@ -105,6 +112,12 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
       )
+    } else if (itemType === "cps") {
+      return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      )
     } else {
       return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -120,6 +133,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
 
     if (itemType === "sheet") return "#10b981" // Green for sheets
     if (itemType === "link") return "#3b82f6" // Blue for links
+    if (itemType === "cps") return "#f59e0b" // Orange for CPS
     return "#8b5cf6" // Purple for tasks
   }
 
@@ -170,6 +184,18 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
             }
           />
           <StatCard
+            title="CPS Systems"
+            value={stats.totalCPS}
+            color="orange"
+            trend={15}
+            onClick={() => onNavigate("/cps")}
+            icon={
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            }
+          />
+          <StatCard
             title="Tasks"
             value={stats.totalTasks}
             color="purple"
@@ -182,6 +208,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
               </svg>
             }
           />
+
         </div>
 
         {/* Pinned Items Section */}
@@ -204,7 +231,7 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
               className={`filter-btn ${pinnedFilter === "all" ? "active" : ""}`}
               onClick={() => setPinnedFilter("all")}
             >
-              All ({pinnedSheets.length + pinnedLinks.length + pinnedTasks.length})
+              All ({pinnedSheets.length + pinnedLinks.length + pinnedTasks.length + pinnedCPS.length})
             </button>
             <button
               className={`filter-btn ${pinnedFilter === "sheets" ? "active" : ""}`}
@@ -238,6 +265,20 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
               Websites ({pinnedLinks.length})
+            </button>
+            <button
+              className={`filter-btn ${pinnedFilter === "cps" ? "active" : ""}`}
+              onClick={() => setPinnedFilter("cps")}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                style={{ width: "16px", height: "16px", marginRight: "4px" }}
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              CPS ({pinnedCPS.length})
             </button>
             <button
               className={`filter-btn ${pinnedFilter === "tasks" ? "active" : ""}`}
@@ -380,56 +421,6 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
           </div>
         </div>
 
-        {/* Recent Tasks Section */}
-        <div className="dashboard-section">
-          <div className="section-header">
-            <h2 className="section-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M9 11l3 3L22 4" />
-                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-              </svg>
-              Tasks
-            </h2>
-            <button className="section-action" onClick={() => onNavigate("/tasks")}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M5 12h14" />
-                <path d="M12 5l7 7-7 7" />
-              </svg>
-              View All ({tasks.length})
-            </button>
-          </div>
-          <div className="recent-items">
-            {recentTasks.length > 0 ? (
-              recentTasks.map((task) => (
-                <div key={task.id} className="recent-item" onClick={() => handleItemClick(task)}>
-                  <div className="item-icon" style={{ background: "#8b5cf6" }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path d="M9 11l3 3L22 4" />
-                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                    </svg>
-                  </div>
-                  <div className="item-content">
-                    <div className="item-name">{task.name}</div>
-                    <div className="item-meta">
-                      <span className="item-category">{task.category}</span>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="empty-state">
-                <div className="empty-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M9 11l3 3L22 4" />
-                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                  </svg>
-                </div>
-                <p>No tasks</p>
-                <span>Create your first task to get organized</span>
-              </div>
-            )}
-          </div>
-        </div>
 
         {/* Recent Website Links Section */}
         <div className="dashboard-section">
@@ -498,6 +489,104 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
                 </div>
                 <p>No website links</p>
                 <span>Add your first website link to get started</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Recent CPS Section */}
+        <div className="dashboard-section">
+          <div className="section-header">
+            <h2 className="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              CPS Systems
+            </h2>
+            <button className="section-action" onClick={() => onNavigate("/cps")}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+              View All ({cps.length})
+            </button>
+          </div>
+          <div className="recent-items">
+            {cps.slice(0, 3).length > 0 ? (
+              cps.slice(0, 3).map((item) => (
+                <div key={item.id} className="recent-item" onClick={() => handleItemClick(item)}>
+                  <div className="item-icon" style={{ background: "#f59e0b" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  </div>
+                  <div className="item-content">
+                    <div className="item-name">{item.name}</div>
+                    <div className="item-meta">
+                      <span className="item-category">{item.category}</span>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="empty-state">
+                <div className="empty-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                </div>
+                <p>No CPS systems</p>
+                <span>Add your first CPS system to get started</span>
+              </div>
+            )}
+          </div>
+        </div>
+        {/* Recent Tasks Section */}
+        <div className="dashboard-section">
+          <div className="section-header">
+            <h2 className="section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              Tasks
+            </h2>
+            <button className="section-action" onClick={() => onNavigate("/tasks")}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+              View All ({tasks.length})
+            </button>
+          </div>
+          <div className="recent-items">
+            {recentTasks.length > 0 ? (
+              recentTasks.map((task) => (
+                <div key={task.id} className="recent-item" onClick={() => handleItemClick(task)}>
+                  <div className="item-icon" style={{ background: "#8b5cf6" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                      <path d="M9 11l3 3L22 4" />
+                      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                    </svg>
+                  </div>
+                  <div className="item-content">
+                    <div className="item-name">{task.name}</div>
+                    <div className="item-meta">
+                      <span className="item-category">{task.category}</span>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="empty-state">
+                <div className="empty-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 11l3 3L22 4" />
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                  </svg>
+                </div>
+                <p>No tasks</p>
+                <span>Create your first task to get organized</span>
               </div>
             )}
           </div>

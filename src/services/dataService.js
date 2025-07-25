@@ -2,12 +2,14 @@
 import googleSheetsData from "../data/googleSheets.json"
 import websiteLinksData from "../data/websiteLinks.json"
 import tasksData from "../data/tasks.json"
+import cpsData from "../data/cps.json"
 
 // In-memory storage - Simple and Fast!
 const currentData = {
   excelSheets: [...googleSheetsData],
   websiteLinks: [...websiteLinksData],
   tasks: [...tasksData],
+  cps: [...cpsData],
 }
 
 // Helper function to generate unique IDs
@@ -124,12 +126,49 @@ export const dataService = {
     return { message: "Task deleted successfully" }
   },
 
+  // CPS - Simple and Clean!
+  getCPS: async () => {
+    return [...currentData.cps]
+  },
+
+  createCPS: async (data) => {
+    const newCPS = {
+      ...data,
+      id: generateId(),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+
+    currentData.cps = [newCPS, ...currentData.cps]
+    return newCPS
+  },
+
+  updateCPS: async (id, data) => {
+    const index = currentData.cps.findIndex((c) => c.id === id)
+    if (index !== -1) {
+      const updatedCPS = {
+        ...currentData.cps[index],
+        ...data,
+        updatedAt: new Date().toISOString(),
+      }
+      currentData.cps[index] = updatedCPS
+      return updatedCPS
+    }
+    throw new Error("CPS not found")
+  },
+
+  deleteCPS: async (id) => {
+    currentData.cps = currentData.cps.filter((c) => c.id !== id)
+    return { message: "CPS deleted successfully" }
+  },
+
   // Simple data access for any future needs
   getAllData: () => {
     return {
       excelSheets: [...currentData.excelSheets],
       websiteLinks: [...currentData.websiteLinks],
       tasks: [...currentData.tasks],
+      cps: [...currentData.cps],
     }
   },
 
@@ -142,6 +181,9 @@ export const dataService = {
     }
     if (newData.tasks) {
       currentData.tasks = [...newData.tasks]
+    }
+    if (newData.cps) {
+      currentData.cps = [...newData.cps]
     }
   },
 }

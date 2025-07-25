@@ -10,6 +10,7 @@ import TaskGrid from "./components/TaskGrid"
 import { ToastContainer } from "./components/Toast"
 import { dataService } from "./services/dataService"
 import "./App.css"
+import CPSGrid from "./components/CPSGrid"
 
 function App() {
   // URL Routing State
@@ -22,6 +23,7 @@ function App() {
   const [excelSheets, setExcelSheets] = useState([])
   const [websiteLinks, setWebsiteLinks] = useState([])
   const [tasks, setTasks] = useState([])
+  const [cps, setCPS] = useState([])
   const [categories, setCategories] = useState([
     "Finance",
     "HR",
@@ -73,15 +75,17 @@ function App() {
   const loadData = async () => {
     try {
       setLoading(true)
-      const [sheetsData, linksData, tasksData] = await Promise.all([
+      const [sheetsData, linksData, tasksData, cpsData] = await Promise.all([
         dataService.getExcelSheets(),
         dataService.getWebsiteLinks(),
         dataService.getTasks(),
+        dataService.getCPS(),
       ])
 
       setExcelSheets(sheetsData)
       setWebsiteLinks(linksData)
       setTasks(tasksData)
+      setCPS(cpsData)
       setError(null)
     } catch (error) {
       console.error("Error loading data:", error)
@@ -130,26 +134,53 @@ function App() {
     return matchesCategory && matchesSearch
   })
 
+  const filteredCPS = cps.filter((item) => {
+    const matchesCategory = selectedCategory === "all" || item.category === selectedCategory
+    const matchesSearch =
+      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchTerm.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
+
   const getActiveTab = () => {
     if (currentPath === "/dashboard") return "dashboard"
     if (currentPath === "/sheets") return "sheets"
     if (currentPath === "/tasks") return "tasks"
     if (currentPath === "/websites") return "websites"
+    if (currentPath === "/cps") return "cps"
     return "dashboard"
   }
 
   const renderContent = () => {
     switch (currentPath) {
       case "/dashboard":
-        return <Dashboard excelSheets={excelSheets} websiteLinks={websiteLinks} tasks={tasks} onNavigate={navigate} />
+        return (
+          <Dashboard
+            excelSheets={excelSheets}
+            websiteLinks={websiteLinks}
+            tasks={tasks}
+            cps={cps}
+            onNavigate={navigate}
+          />
+        )
       case "/sheets":
         return <ExcelGrid sheets={filteredExcelSheets} />
       case "/websites":
         return <WebsiteLinks links={filteredWebsiteLinks} />
       case "/tasks":
         return <TaskGrid tasks={filteredTasks} />
+      case "/cps":
+        return <CPSGrid cpsItems={filteredCPS} />
       default:
-        return <Dashboard excelSheets={excelSheets} websiteLinks={websiteLinks} tasks={tasks} onNavigate={navigate} />
+        return (
+          <Dashboard
+            excelSheets={excelSheets}
+            websiteLinks={websiteLinks}
+            tasks={tasks}
+            cps={cps}
+            onNavigate={navigate}
+          />
+        )
     }
   }
 
@@ -185,10 +216,12 @@ function App() {
           else if (tab === "sheets") navigate("/sheets")
           else if (tab === "tasks") navigate("/tasks")
           else if (tab === "websites") navigate("/websites")
+          else if (tab === "cps") navigate("/cps")
         }}
         excelCount={excelSheets.length}
         websiteCount={websiteLinks.length}
         taskCount={tasks.length}
+        cpsCount={cps.length}
         isOpen={isSidebarOpen}
         onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
       />

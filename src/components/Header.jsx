@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import { useState, useRef, useEffect } from "react";
-import "./Header.css";
+import { useState, useRef, useEffect } from "react"
+import "./Header.css"
 
 const Header = ({
   searchTerm,
@@ -15,54 +15,52 @@ const Header = ({
   currentPath,
   onBack,
 }) => {
-  const [showFilters, setShowFilters] = useState(false);
-  const filterRef = useRef(null);
+  const [showFilters, setShowFilters] = useState(false)
+  const filterRef = useRef(null)
 
   // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (filterRef.current && !filterRef.current.contains(event.target)) {
-        setShowFilters(false);
+        setShowFilters(false)
       }
-    };
+    }
 
     if (showFilters) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [showFilters]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showFilters])
 
   const getPageTitle = () => {
     switch (activeTab) {
       case "dashboard":
-        return "Dashboard";
+        return "Dashboard"
       case "sheets":
-        return "Google Sheets";
+        return "Google Sheets"
       case "tasks":
-        return "Tasks";
+        return "Tasks"
       case "websites":
-        return "Website Links";
+        return "Website Links"
+      case "cps":
+        return "CPS Systems"
       default:
-        return "Dashboard";
+        return "Dashboard"
     }
-  };
+  }
 
   const showSearchBar =
-    activeTab === "sheets" || activeTab === "websites" || activeTab === "tasks";
+    activeTab === "sheets" || activeTab === "websites" || activeTab === "tasks" || activeTab === "cps"
 
   return (
     <header className="header">
       <div className="header-container">
         <div className="header-left">
           {!isSidebarOpen && (
-            <button
-              className="menu-toggle"
-              onClick={onSidebarToggle}
-              title="Open menu"
-            >
+            <button className="menu-toggle" onClick={onSidebarToggle} title="Open menu">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
@@ -92,11 +90,7 @@ const Header = ({
                   className="search-input"
                 />
                 {searchTerm && (
-                  <button
-                    className="clear-search"
-                    onClick={() => setSearchTerm("")}
-                    title="Clear search"
-                  >
+                  <button className="clear-search" onClick={() => setSearchTerm("")} title="Clear search">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                       <line x1="18" y1="6" x2="6" y2="18" />
                       <line x1="6" y1="6" x2="18" y2="18" />
@@ -129,12 +123,10 @@ const Header = ({
                   </div>
                   <div className="filter-options">
                     <button
-                      className={`filter-option ${
-                        selectedCategory === "all" ? "active" : ""
-                      }`}
+                      className={`filter-option ${selectedCategory === "all" ? "active" : ""}`}
                       onClick={() => {
-                        setSelectedCategory("all");
-                        setShowFilters(false);
+                        setSelectedCategory("all")
+                        setShowFilters(false)
                       }}
                     >
                       <span className="filter-dot all"></span>
@@ -143,19 +135,13 @@ const Header = ({
                     {categories.map((category) => (
                       <button
                         key={category}
-                        className={`filter-option ${
-                          selectedCategory === category ? "active" : ""
-                        }`}
+                        className={`filter-option ${selectedCategory === category ? "active" : ""}`}
                         onClick={() => {
-                          setSelectedCategory(category);
-                          setShowFilters(false);
+                          setSelectedCategory(category)
+                          setShowFilters(false)
                         }}
                       >
-                        <span
-                          className={`filter-dot ${category
-                            .toLowerCase()
-                            .replace(/\s+/g, "")}`}
-                        ></span>
+                        <span className={`filter-dot ${category.toLowerCase().replace(/\s+/g, "")}`}></span>
                         {category}
                       </button>
                     ))}
@@ -167,7 +153,7 @@ const Header = ({
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

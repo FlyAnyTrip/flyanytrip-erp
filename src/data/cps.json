@@ -1,0 +1,20 @@
+[
+  {
+    "id": "401",
+    "name": "Flight Booking CPS Integration",
+    "description": "CPS system for managing flight booking commissions and partner payouts",
+    "url": "https://flyanytrip.com/agent/cps.php",
+    "category": "Finance",
+    "isPinned": true,
+    "createdAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "id": "402",
+    "name": "Statue Of Unity",
+    "description": "Commission tracking system for hotel booking partners and revenue sharing",
+    "url": "https://statueofunitytour.in/cps/login.php",
+    "category": "Partnerships",
+    "isPinned": true,
+    "createdAt": "2024-01-20T14:15:00.000Z"
+  }
+]
