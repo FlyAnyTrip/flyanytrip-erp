@@ -129,6 +129,14 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
     }
   }
 
+  const handleOpenCPS = () => {
+    // This function will open the CPS panel
+    // You can implement the actual CPS opening logic here
+    console.log("Opening CPS panel")
+    // For now, we'll just show an alert
+    alert("CPS panel will open here")
+  }
+
   return (
     <div className="dashboard">
       <div className="dashboard-header">
@@ -179,6 +187,21 @@ const Dashboard = ({ excelSheets, websiteLinks, tasks, onNavigate }) => {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M9 11l3 3L22 4" />
                 <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+            }
+          />
+          {/* New CPS Stat Card */}
+          <StatCard
+            title="Content Publishing"
+            value="CPS"
+            color="orange"
+            onClick={handleOpenCPS}
+            icon={
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                <line x1="8" y1="7" x2="16" y2="7" />
+                <line x1="8" y1="11" x2="16" y2="11" />
+                <line x1="8" y1="15" x2="13" y2="15" />
               </svg>
             }
           />
