@@ -70,5 +70,13 @@
     "url": "https://docs.google.com/spreadsheets/d/1bJ2mynkvE3a4THHn5qUiNCxiCX7Z7mdGRB5ptTup0jg",
     "category": "Leads",
     "isPinned": false
+  },
+  {
+    "id": "10",
+    "name": "TripEasy list",
+    "description": "Lead tracking sheet for TripEasy project.",
+    "url": "https://docs.google.com/spreadsheets/d/1_RyTNWyDpVH56s4UMFeldMmMA2yKjkYJaQdN4Nd7N9s/edit?gid=0#gid=0",
+    "category": "Leads",
+    "isPinned": false
   }
 ]
