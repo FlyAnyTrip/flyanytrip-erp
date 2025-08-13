@@ -9,7 +9,7 @@
   },
   {
     "id": "2",
-    "name": "Unity Inquiries Sheet 2",
+    "name": "Monthly Revenue Sheet",
     "description": "Additional Unity inquiry submissions and entries",
     "url": "https://docs.google.com/spreadsheets/d/1lfo77aU0Unjac0VPVNQHQwvHzqgHWX_2cFynU3ZgS0o",
     "category": "Leads",
@@ -17,7 +17,7 @@
   },
   {
     "id": "3",
-    "name": "Unity Inquiries Sheet 3",
+    "name": "Ticket Booking",
     "description": "More Unity traveller data records",
     "url": "https://docs.google.com/spreadsheets/d/1EIyfrOcUGY-oODJRfNkQew2BKb_VEvQdPAS6UAJsb2U",
     "category": "Leads",
@@ -25,7 +25,7 @@
   },
   {
     "id": "4",
-    "name": "Unity Inquiries Sheet 4",
+    "name": "Unity Traveller",
     "description": "Extended Unity traveller details and inquiries",
     "url": "https://docs.google.com/spreadsheets/d/1qa9B7d-nfXCavNQkIhfDm4Bz9n3FfkezicWMw4mG3ck",
     "category": "Leads",
@@ -33,7 +33,7 @@
   },
   {
     "id": "5",
-    "name": "Unity Traveller Data",
+    "name": "Tour Package Inquiry Sheet",
     "description": "Traveller details and route preferences from Unity",
     "url": "https://docs.google.com/spreadsheets/d/11ICAh584hF3Nk0_RAF6cQwyCBsl2ZKsyacKBgc1DoVQ",
     "category": "Travellers",
@@ -41,7 +41,7 @@
   },
   {
     "id": "6",
-    "name": "Tour Package Inquiry Sheet",
+    "name": "FlyAnyTrip Enquiry Sheet",
     "description": "Enquiries related to available travel packages and customization",
     "url": "https://docs.google.com/spreadsheets/d/1xaKAGEeeFWZEK7Bwbntix2PNBZy8mPmgJlg1M6_vEfg",
     "category": "Leads",
@@ -49,7 +49,7 @@
   },
   {
     "id": "7",
-    "name": "FlyAnyTrip Enquiry Sheet",
+    "name": "Influencer Expense Sheet",
     "description": "All FlyAnyTrip service enquiries and customer interests",
     "url": "https://docs.google.com/spreadsheets/d/1q6JbNqMW2dexwWJ2EHNrwOSD24bOrUhstT_7wDj7uQ0",
     "category": "Leads",
@@ -65,14 +65,6 @@
   },
   {
     "id": "9",
-    "name": "FlyAnyTrip Regional Travellers",
-    "description": "Data about regional travellers associated with FlyAnyTrip",
-    "url": "https://docs.google.com/spreadsheets/d/1bJ2mynkvE3a4THHn5qUiNCxiCX7Z7mdGRB5ptTup0jg",
-    "category": "Travellers",
-    "isPinned": false
-  },
-  {
-    "id": "10",
     "name": "Daman Inquiries Sheet",
     "description": "Leads and enquiry data specifically from the Daman region",
     "url": "https://docs.google.com/spreadsheets/d/1bJ2mynkvE3a4THHn5qUiNCxiCX7Z7mdGRB5ptTup0jg",
