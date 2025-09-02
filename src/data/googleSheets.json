@@ -78,5 +78,13 @@
     "url": "https://docs.google.com/spreadsheets/d/1_RyTNWyDpVH56s4UMFeldMmMA2yKjkYJaQdN4Nd7N9s/edit?gid=0#gid=0",
     "category": "Leads",
     "isPinned": false
+  },
+  {
+    "id": "10",
+    "name": "TripEasy Inquiry list",
+    "description": "Lead tracking sheet for TripEasy project.",
+    "url": "https://docs.google.com/spreadsheets/d/11ICAh584hF3Nk0_RAF6cQwyCBsl2ZKsyacKBgc1DoVQ/edit?usp=sharing",
+    "category": "Leads",
+    "isPinned": false
   }
 ]
